@@ -1,135 +1,162 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Giritharan J · IT Consultant & Developer</title>
-  <!-- Tailwind via CDN + basic layer (no extra config) -->
+  <!-- Tailwind via CDN -->
   <script src="https://cdn.tailwindcss.com"></script>
-  <!-- Google Fonts (same vibe) -->
+  <!-- Google Fonts -->
   <link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=DM+Sans:ital,wght@0,300;0,400;0,500;1,300&display=swap" rel="stylesheet">
-  <!-- tiny custom accent to match original palette -->
   <style>
     :root { --accent: #ff8c00; --accent2: #e65c00; --wa: #25D366; }
-    body { font-family: 'DM Sans', sans-serif; background-color: #fad09d; color: #1a1208; }
+    body { font-family: 'DM Sans', sans-serif; background-color: #fdf8f2; color: #1a1208; }
     .font-syne { font-family: 'Syne', sans-serif; }
-    /* cursor elements removed (left as optional if you want – but tailwind version uses minimal) */
-    .hover-scale { transition: transform 0.2s ease, box-shadow 0.2s ease; }
-    .hover-scale:hover { transform: translateY(-3px); box-shadow: 0 12px 28px -8px rgba(255,140,0,0.25); }
-    .tech-fill-animate { transition: width 1.2s cubic-bezier(0.4,0,0.2,1); }
-    /* simple reveal */
+    /* reveal animation */
     .reveal { opacity: 0; transform: translateY(24px); transition: opacity 0.7s ease, transform 0.7s ease; }
     .reveal.visible { opacity: 1; transform: translateY(0); }
-    /* WA bubble pulse (optional) */
+    /* WA pulse */
     @keyframes gentle-pulse { 0%,100%{box-shadow:0 8px 22px rgba(37,211,102,0.4);} 50%{box-shadow:0 8px 36px rgba(37,211,102,0.7);} }
     .wa-pulse { animation: gentle-pulse 2.5s infinite; }
+    /* mobile menu transition */
+    .menu-transition { transition: transform 0.3s ease-in-out; }
   </style>
 </head>
 <body class="antialiased selection:bg-orange-200 selection:text-stone-900">
 
-<!-- ========== REBUILT WITH TAILWID + LEFT HERO (PHOTO) ========== -->
-<!-- main container (no custom cursor – can be added back but kept minimal) -->
+<!-- ========== CORRECTED NAVIGATION ========== -->
+<!-- Fixed header with black background, white text, orange hover -->
+<nav class="w-full top-0 left-0 w-full z-50 bg-black shadow-lg border-b border-orange-600/20">
+  <div class="max-w-7xl mx-auto px-5 sm:px-8 lg:px-12">
+    <div class="flex items-center justify-between h-20">
 
-<!-- NAVIGATION (tailwind, clean, same links) -->
-<nav class="w-full bg-white/90 backdrop-blur-lg border-b border-orange-100">
-  <div class="max-w-7xl mx-auto px-5 py-4 flex items-center justify-between">
-    
-    <!-- LEFT: BRAND -->
-    <div class="flex flex-col leading-tight">
-      <span class="font-syne font-black text-xl md:text-2xl tracking-tight text-stone-700">
-        Giritharan Janakiraman
-      </span>
-      <span class="text-[9px] md:text-[10px] uppercase tracking-widest text-orange-400 font-medium">
-        IT Consultant & Developer
-      </span>
+      <!-- LEFT BRAND: white text, orange "dot" concept (using period) -->
+      <div class="flex flex-col leading-tight">
+        <span class="font-syne font-black text-xl md:text-2xl tracking-tight text-white">
+          Giritharan Janakiraman</span>
+        <span class="text-[10px] md:text-[10px] uppercase tracking-widest text-white/100 font-medium">
+          IT CONSULTANT & DEVELOPER
+        </span>
+      </div>
+
+      <!-- DESKTOP MENU (right side) white / orange hover -->
+      <div class="flex md:flex items-center gap-10">
+        <ul class="flex items-center gap-8 text-sm uppercase tracking-wide font-medium">
+          <li><a href="#about" class="text-white hover:text-[#ff8c00] transition-colors duration-200">ABOUT</a></li>
+          <li><a href="#skills" class="text-white hover:text-[#ff8c00] transition-colors">SKILLS</a></li>
+          <li><a href="#services" class="text-white hover:text-[#ff8c00] transition-colors">SERVICES</a></li>
+          <li><a href="#projects" class="text-white hover:text-[#ff8c00] transition-colors">PROJECTS</a></li>
+          <li><a href="#contact" class="text-white hover:text-[#ff8c00] transition-colors">CONTACT</a></li>
+        </ul>
+      </div>
+
+      <!-- MOBILE HAMBURGER (right) + mini hire button -->
+      <div class="flex items-center gap-3 md:hidden">
+        <a href="#contact" class="bg-[#ff8c00] text-black px-4 py-1.5 rounded-lg font-syne font-bold text-xs uppercase tracking-wider shadow-sm hover:bg-[#e65c00] hover:text-white">
+          Hire
+        </a>
+        <button id="menuToggle" onclick="toggleMobileMenu()" class="text-3xl text-white focus:outline-none">
+          ☰
+        </button>
+      </div>
     </div>
-
-    <!-- DESKTOP MENU -->
-   <ul class="flex items-center gap-8 text-sm uppercase tracking-wide font-medium text-stone-600">
-      <li><a href="#about" class="hover:text-orange-500 transition">About</a></li>
-      <li><a href="#skills" class="hover:text-orange-500 transition">Skills</a></li>
-      <li><a href="#services" class="hover:text-orange-500 transition">Services</a></li>
-      <li><a href="#projects" class="hover:text-orange-500 transition">Projects</a></li>
-      <li><a href="#contact" class="hover:text-orange-500 transition">Contact</a></li>
-    </ul>
-
-    <!-- RIGHT SIDE -->
-
-      <!-- Mobile Menu -->
-      <button onclick="toggleMenu()" class="md:hidden text-3xl text-stone-700">
-        ☰
-      </button>
-
-   
   </div>
 
-  <!-- MOBILE MENU -->
-  <div id="mobileMenu" class="hidden md:hidden bg-white border-t border-orange-100 px-6 py-6 space-y-5 text-center text-sm uppercase tracking-wide font-medium text-stone-700">
-    <a href="#about" onclick="toggleMenu()" class="block hover:text-orange-500">About</a>
-    <a href="#skills" onclick="toggleMenu()" class="block hover:text-orange-500">Skills</a>
-    <a href="#services" onclick="toggleMenu()" class="block hover:text-orange-500">Services</a>
-    <a href="#projects" onclick="toggleMenu()" class="block hover:text-orange-500">Projects</a>
-    <a href="#contact" onclick="toggleMenu()" class="block hover:text-orange-500">Contact</a>
+  <!-- MOBILE MENU PANEL (slide from right) - hidden by default with translate-x-full -->
+  <div id="mobileMenu" class="fixed top-0 right-0 h-full w-64 bg-black border-l-2 border-orange-500 shadow-2xl transform transition-transform duration-300 ease-in-out translate-x-full z-50 md:hidden">
+    <div class="flex justify-end p-5">
+      <button onclick="toggleMobileMenu()" class="text-3xl text-white hover:text-[#ff8c00]">&times;</button>
+    </div>
+    <div class="flex flex-col items-start gap-6 px-8 py-6 text-base uppercase font-medium text-white">
+      <a href="#about" onclick="toggleMobileMenu()" class="hover:text-[#ff8c00] transition w-full border-b border-white/20 pb-2">ABOUT</a>
+      <a href="#skills" onclick="toggleMobileMenu()" class="hover:text-[#ff8c00] transition w-full border-b border-white/20 pb-2">SKILLS</a>
+      <a href="#services" onclick="toggleMobileMenu()" class="hover:text-[#ff8c00] transition w-full border-b border-white/20 pb-2">SERVICES</a>
+      <a href="#projects" onclick="toggleMobileMenu()" class="hover:text-[#ff8c00] transition w-full border-b border-white/20 pb-2">PROJECTS</a>
+      <a href="#contact" onclick="toggleMobileMenu()" class="hover:text-[#ff8c00] transition w-full border-b border-white/20 pb-2">CONTACT</a>
+    </div>
   </div>
 </nav>
-<!-- ===== HERO with LEFT PHOTO (Giri.JPG) and right content ===== -->
-<section id="home" class="pt-15 pb-15 px-[5%] min-h-screen flex items-center relative overflow-hidden bg-[#fdf8f2]">
-   
- <div class="flex items-center gap-3">
-       <a href="https://wa.me/+918778373517?text=Hello%20Giritharan%2C%20I%20visited%20your%20portfolio%20and%20would%20like%20to%20discuss%20a%20project." target="_blank" class="w-9 h-9 flex items-center justify-center rounded-lg border border-orange-200/70 bg-white text-stone-500 hover:border-[#25D366] hover:text-[#25D366] hover:shadow-sm transition-all" title="WhatsApp">
+
+<!-- spacer to prevent content hiding under fixed header -->
+<div class="h-24"></div>
+
+<!-- ===== HERO SECTION with "Build Better" and left photo ===== -->
+<section id="home" class="pt-3 pb-3 px-[3%] min-h-screen flex items-center relative overflow-hidden bg-[#fdf8f2]">
+  
+  <!-- Social + Hire Me (left side as per your earlier code, but we'll keep it left as you had) -->
+  <div class="absolute top-20 left-[5%] z-30 flex items-center gap-3">
+    <!-- WhatsApp -->
+    <a href="https://wa.me/+918778373517?text=Hello%20Giritharan%2C%20I%20visited%20your%20portfolio%20and%20would%20like%20to%20discuss%20a%20project." target="_blank" 
+       class="w-9 h-9 flex items-center justify-center rounded-lg border border-orange-200/70 bg-white text-stone-700 hover:border-[#25D366] hover:text-[#25D366] hover:shadow-sm transition-all" title="WhatsApp">
       <svg class="w-4 h-4 fill-current" viewBox="0 0 32 32"><path d="M16 0C7.163 0 0 7.163 0 16c0 2.824.738 5.476 2.031 7.776L0 32l8.457-2.012A15.93 15.93 0 0 0 16 32c8.837 0 16-7.163 16-16S24.837 0 16 0zm7.297 19.437c-.4-.2-2.364-1.167-2.731-1.3-.367-.133-.634-.2-.9.2-.267.4-1.033 1.3-1.267 1.567-.233.267-.467.3-.867.1-.4-.2-1.688-.622-3.216-1.984-1.188-1.061-1.99-2.371-2.223-2.771-.233-.4-.025-.616.175-.815.18-.178.4-.467.6-.7.2-.233.267-.4.4-.667.133-.267.067-.5-.033-.7-.1-.2-.9-2.167-1.233-2.967-.325-.78-.655-.674-.9-.686l-.767-.013c-.267 0-.7.1-1.067.5-.367.4-1.4 1.367-1.4 3.334s1.433 3.867 1.633 4.134c.2.267 2.82 4.303 6.828 6.034.954.412 1.698.658 2.279.843.958.305 1.83.262 2.52.159.768-.114 2.364-.967 2.697-1.9.333-.933.333-1.733.233-1.9-.1-.167-.367-.267-.767-.467z"/></svg>
     </a>
-    <a href="https://github.com/GiritharanJ" target="_blank" class="w-9 h-9 flex items-center justify-center rounded-lg border border-orange-200/70 bg-white text-stone-500 hover:border-[#ff8c00] hover:text-[#ff8c00] transition-all">
+    <!-- GitHub -->
+    <a href="https://github.com/GiritharanJ" target="_blank" 
+       class="w-9 h-9 flex items-center justify-center rounded-lg border border-orange-200/70 bg-white text-stone-700 hover:border-[#ff8c00] hover:text-[#ff8c00] transition-all">
       <svg class="w-4 h-4 fill-current" viewBox="0 0 24 24"><path d="M12 0C5.374 0 0 5.373 0 12c0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23A11.509 11.509 0 0 1 12 5.803c1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576C20.566 21.797 24 17.3 24 12c0-6.627-5.373-12-12-12z"/></svg>
     </a>
-    <a href="https://linkedin.com/in/giritharanj" target="_blank" class="w-9 h-9 flex items-center justify-center rounded-lg border border-orange-200/70 bg-white text-stone-500 hover:border-[#ff8c00] hover:text-[#ff8c00] transition-all">
+    <!-- LinkedIn -->
+    <a href="https://linkedin.com/in/giritharanj" target="_blank" 
+       class="w-9 h-9 flex items-center justify-center rounded-lg border border-orange-200/70 bg-white text-stone-700 hover:border-[#ff8c00] hover:text-[#ff8c00] transition-all">
       <svg class="w-4 h-4 fill-current" viewBox="0 0 24 24"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 0 1-2.063-2.065 2.064 2.064 0 1 1 2.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
     </a>
-      <!-- Hire Button Desktop -->
-      <a href="#contact" class="flex md:inline-flex bg-gradient-to-r from-orange-500 to-orange-600 text-white px-5 py-2 rounded-xl font-semibold text-sm shadow hover:shadow-lg transition">
-        Hire Me →
-      </a>
- </div>   
+    <!-- Hire button integrated -->
+        <a href="#contact" class="bg-[#ff8c00] text-black font-syne font-bold text-xs uppercase tracking-wider px-5 py-2.5 rounded-xl shadow-md hover:bg-[#e65c00] hover:text-white transition-all">
+          Hire Me
+        </a>
+  </div>   
+
   <!-- background subtle pattern -->
   <div class="absolute inset-0 pointer-events-none" style="background-image: radial-gradient(circle, rgba(255,140,0,0.06) 1.5px, transparent 1.5px); background-size: 36px 36px; mask-image: radial-gradient(ellipse 80% 80% at 50% 50%, black 0%, transparent 100%);"></div>
   
+  <!-- main grid: left photo + right content -->
   <div class="relative z-10 w-full max-w-7xl mx-auto grid md:grid-cols-2 gap-12 items-center">
-    <!-- LEFT: PHOTO (Giri.JPG) - using inline img with classes -->
-    <div class="flex justify-center md:justify-end order-2 md:order-1 reveal visible" style="transition-delay:0.1s">
+    <!-- LEFT: PHOTO (Giri.JPG) -->
+    <div class="flex justify-center md:justify-end order-2 md:order-1">
       <div class="relative w-64 h-64 md:w-80 md:h-80 lg:w-96 lg:h-96 rounded-full border-8 border-white shadow-2xl overflow-hidden bg-gradient-to-br from-amber-100 to-orange-50">
-        <!-- your image: Giri.JPG – make sure filename matches, use actual photo -->
+        <!-- your image: Giri.JPG -->
         <img src="Giri.JPG" alt="Giritharan J" class="w-full h-full object-cover">
       </div>
     </div>
 
     <!-- RIGHT: hero content -->
-    <div class="order-1 md:order-2 reveal visible">
-      <div class="inline-flex items-center gap-2 bg-orange-100/60 border border-orange-300/40 text-[#ff8c00] text-xs uppercase tracking-widest px-4 py-2 rounded-md mb-6 font-semibold">
-        <span class="w-2 h-2 bg-[#25D366] rounded-full animate-pulse"></span> Available for Projects · Chennai
+    <div class="order-1 md:order-2">
+      <!-- available tag -->
+      <div class="inline-flex items-center gap-2 bg-white border border-orange-300 text-[#ff8c00] text-xs uppercase tracking-widest px-4 py-2 rounded-md mb-6 font-semibold shadow-sm">
+        <span class="w-2 h-2 bg-[#25D366] rounded-full animate-pulse"></span> 
+        <span class="text-black/70">Available for Projects · Chennai</span>
       </div>
-      <h1 class="font-syne font-extrabold text-5xl md:text-6xl lg:text-7xl leading-[1.1] tracking-tight text-stone-800">
-        I Build Digital<br>
-        <span class="bg-gradient-to-r from-[#ff8c00] to-[#e65c00] bg-clip-text text-transparent">Systems That Work.</span>
+      
+      <!-- main title: "Build Better" with orange accent (as per image) -->
+      <h1 class="font-syne font-extrabold text-5xl md:text-6xl lg:text-7xl leading-[1.1] tracking-tight text-black">
+        Build<br>
+        <span class="text-[#ff8c00]">Better.</span>
       </h1>
-      <p class="text-stone-600 text-lg max-w-lg mt-6 font-light leading-relaxed">
+      
+      <!-- description -->
+      <p class="text-black/80 text-lg max-w-lg mt-6 font-light leading-relaxed">
         IT Analyst & Business Technology Consultant with 8+ years turning complex business problems into clean, efficient digital solutions — websites, cloud, CRM, automation.
       </p>
+      
+      <!-- two buttons -->
       <div class="flex flex-wrap gap-4 mt-8">
         <a href="#contact" class="bg-gradient-to-r from-[#ff8c00] to-[#e65c00] text-white px-7 py-3.5 rounded-xl font-syne font-bold shadow-lg hover:shadow-2xl hover:-translate-y-1 transition-all">Start a Project →</a>
-        <a href="#projects" class="bg-white border-2 border-orange-200/70 text-stone-700 px-7 py-3.5 rounded-xl font-syne font-bold flex items-center gap-2 shadow-sm hover:border-[#ff8c00] hover:text-[#ff8c00] transition-all"><span>⚡</span> View My Work</a>
+        <a href="#projects" class="bg-white border-2 border-[#ff8c00]/70 text-black px-7 py-3.5 rounded-xl font-syne font-bold flex items-center gap-2 shadow-sm hover:bg-orange-50 hover:border-[#ff8c00] transition-all"><span>⚡</span> View My Work</a>
       </div>
 
       <!-- stats card -->
-      <div class="flex gap-8 bg-white border border-orange-200/40 rounded-2xl p-6 pr-10 mt-12 w-fit shadow-md">
-        <div><span class="font-syne font-extrabold text-3xl text-[#ff8c00]">8+</span><div class="text-xs uppercase text-stone-500 tracking-wider mt-1">Years Exp</div></div>
-        <div class="w-px bg-orange-200/60"></div>
-        <div><span class="font-syne font-extrabold text-3xl text-[#ff8c00]">10+</span><div class="text-xs uppercase text-stone-500 tracking-wider mt-1">Projects</div></div>
-        <div class="w-px bg-orange-200/60"></div>
-        <div><span class="font-syne font-extrabold text-3xl text-[#ff8c00]">99%</span><div class="text-xs uppercase text-stone-500 tracking-wider mt-1">Accuracy</div></div>
+      <div class="flex gap-8 bg-white border border-orange-200 rounded-2xl p-6 pr-10 mt-12 w-fit shadow-md">
+        <div><span class="font-syne font-extrabold text-3xl text-[#ff8c00]">8+</span><div class="text-xs uppercase text-black/60 tracking-wider mt-1">Years Exp</div></div>
+        <div class="w-px bg-orange-200"></div>
+        <div><span class="font-syne font-extrabold text-3xl text-[#ff8c00]">10+</span><div class="text-xs uppercase text-black/60 tracking-wider mt-1">Projects</div></div>
+        <div class="w-px bg-orange-200"></div>
+        <div><span class="font-syne font-extrabold text-3xl text-[#ff8c00]">99%</span><div class="text-xs uppercase text-black/60 tracking-wider mt-1">Accuracy</div></div>
       </div>
     </div>
   </div>
 </section>
+
 
 <!-- ABOUT, SKILLS, SERVICES etc — adapted with tailwind, keeping same sections but simplified + reveal script  -->
 <section id="about" class="py-24 px-[5%] bg-[#fff9f2]">
@@ -238,37 +265,85 @@ Business Technology Consultant | Web & Application Solutions</p></div></a>
 
 <!-- minimal script for reveal, tech bars, WA toggle, form toast -->
 <script>
-window.toggleMenu = function() {
+// unified script with proper functions
+
+// Mobile menu toggle
+window.toggleMobileMenu = function() {
   const menu = document.getElementById('mobileMenu');
-  menu.classList.toggle('hidden');
+  menu.classList.toggle('translate-x-full');
+  if (!menu.classList.contains('translate-x-full')) {
+    document.body.style.overflow = 'hidden';
+  } else {
+    document.body.style.overflow = '';
+  }
 };
-  
-  (function() {
-    // reveal observer
-    const obs = new IntersectionObserver((entries) => {
-      entries.forEach((e,i) => { if (e.isIntersecting) { setTimeout(() => e.target.classList.add('visible'), i*50); obs.unobserve(e.target); } });
-    }, { threshold: 0.1 });
-    document.querySelectorAll('.reveal').forEach(el => obs.observe(el));
 
-    // tech bars width
-    const barObs = new IntersectionObserver((entries) => {
-      entries.forEach(e => { if (e.isIntersecting) { e.target.style.width = e.target.dataset.width + '%'; barObs.unobserve(e.target); } });
-    }, { threshold: 0.3 });
-    document.querySelectorAll('.tech-fill-animate').forEach(b => barObs.observe(b));
+// WA toggle
+window.toggleWA = function() { 
+  const b = document.getElementById('waBubble'); 
+  b.classList.toggle('hidden'); 
+};
 
-    // form handler
-    window.handleSubmit = function(e) { e.preventDefault(); const t = document.getElementById('toast'); t.classList.remove('opacity-0','translate-y-8'); t.classList.add('opacity-100','translate-y-0'); setTimeout(() => { t.classList.add('opacity-0','translate-y-8'); }, 3000); e.target.reset(); };
+// Form handler (if needed)
+window.handleSubmit = function(e) { 
+  e.preventDefault(); 
+  const t = document.getElementById('toast'); 
+  t.classList.remove('opacity-0', 'translate-y-8'); 
+  t.classList.add('opacity-100', 'translate-y-0'); 
+  setTimeout(() => { 
+    t.classList.add('opacity-0', 'translate-y-8'); 
+  }, 3000); 
+  e.target.reset(); 
+};
 
-    // WA toggle
-    window.toggleWA = function() { const b = document.getElementById('waBubble'); b.classList.toggle('hidden'); };
-    // auto open after 4s
-    setTimeout(() => { document.getElementById('waBubble')?.classList.remove('hidden'); }, 4000);
-    // click outside close
-    document.addEventListener('click', function(e) {
-      const fab = document.querySelector('.fixed.bottom-6.right-6'); const bubble = document.getElementById('waBubble');
-      if (fab && !fab.contains(e.target) && !bubble.classList.contains('hidden')) bubble.classList.add('hidden');
+// Close mobile menu on escape
+document.addEventListener('keydown', function(e) {
+  if (e.key === 'Escape') {
+    const menu = document.getElementById('mobileMenu');
+    if (!menu.classList.contains('translate-x-full')) {
+      menu.classList.add('translate-x-full');
+      document.body.style.overflow = '';
+    }
+  }
+});
+
+// Close mobile menu when clicking outside
+window.addEventListener('click', function(event) {
+  const menu = document.getElementById('mobileMenu');
+  const toggleBtn = document.getElementById('menuToggle');
+  if (menu && toggleBtn && !menu.classList.contains('translate-x-full') && 
+      !menu.contains(event.target) && !toggleBtn.contains(event.target)) {
+    menu.classList.add('translate-x-full');
+    document.body.style.overflow = '';
+  }
+});
+
+// Reveal on scroll
+(function() {
+  const obs = new IntersectionObserver((entries) => {
+    entries.forEach((e, i) => { 
+      if (e.isIntersecting) { 
+        setTimeout(() => e.target.classList.add('visible'), i*50); 
+        obs.unobserve(e.target); 
+      } 
     });
-  })();
+  }, { threshold: 0.1 });
+  document.querySelectorAll('.reveal').forEach(el => obs.observe(el));
+
+  // Auto open WA after 4s
+  setTimeout(() => { 
+    document.getElementById('waBubble')?.classList.remove('hidden'); 
+  }, 4000);
+  
+  // Close WA when clicking outside
+  document.addEventListener('click', function(e) {
+    const fab = document.querySelector('.fixed.bottom-6.right-6'); 
+    const bubble = document.getElementById('waBubble');
+    if (fab && !fab.contains(e.target) && bubble && !bubble.classList.contains('hidden')) {
+      bubble.classList.add('hidden');
+    }
+  });
+})();
 </script>
 <!-- fix initial hidden state for WA bubble -->
 <style>.hidden { display: none !important; }</style>
