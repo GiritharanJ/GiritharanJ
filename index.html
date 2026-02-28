@@ -29,39 +29,42 @@
 <!-- Fixed header with black background, white text, orange hover -->
 <nav class="w-full top-0 left-0 w-full z-50 bg-black shadow-lg border-b border-orange-600/20">
   <div class="max-w-7xl mx-auto px-5 sm:px-8 lg:px-12">
+    
     <div class="flex items-center justify-between h-20">
 
-      <!-- LEFT BRAND: white text, orange "dot" concept (using period) -->
-      <div class="flex flex-col leading-tight">
-        <span class="font-syne font-black text-xl md:text-2xl tracking-tight text-white">
-          Giritharan Janakiraman</span>
-        <span class="text-[10px] md:text-[10px] uppercase tracking-widest text-white/100 font-medium">
-          IT CONSULTANT & DEVELOPER
-        </span>
-      </div>
+  <!-- BRAND -->
+  <div class="flex flex-col leading-tight">
+    <span class="font-syne font-black text-xl md:text-2xl tracking-tight text-white">
+      Giritharan Janakiraman
+    </span>
+    <span class="text-[10px] uppercase tracking-widest text-white font-medium">
+      IT CONSULTANT & DEVELOPER
+    </span>
+  </div>
 
-      <!-- DESKTOP MENU (right side) white / orange hover -->
-      <div class="flex md:flex items-center gap-10">
-        <ul class="flex items-center gap-8 text-sm uppercase tracking-wide font-medium">
-          <li><a href="#about" class="text-white hover:text-[#ff8c00] transition-colors duration-200">ABOUT</a></li>
-          <li><a href="#skills" class="text-white hover:text-[#ff8c00] transition-colors">SKILLS</a></li>
-          <li><a href="#services" class="text-white hover:text-[#ff8c00] transition-colors">SERVICES</a></li>
-          <li><a href="#projects" class="text-white hover:text-[#ff8c00] transition-colors">PROJECTS</a></li>
-          <li><a href="#contact" class="text-white hover:text-[#ff8c00] transition-colors">CONTACT</a></li>
-        </ul>
-      </div>
+  <!-- DESKTOP MENU -->
+  <div class="hidden md:flex items-center gap-10">
+    <ul class="flex items-center gap-8 text-sm uppercase tracking-wide font-medium">
+      <li><a href="#about" class="text-white hover:text-[#ff8c00]">ABOUT</a></li>
+      <li><a href="#skills" class="text-white hover:text-[#ff8c00]">SKILLS</a></li>
+      <li><a href="#services" class="text-white hover:text-[#ff8c00]">SERVICES</a></li>
+      <li><a href="#projects" class="text-white hover:text-[#ff8c00]">PROJECTS</a></li>
+      <li><a href="#contact" class="text-white hover:text-[#ff8c00]">CONTACT</a></li>
+    </ul>
+  </div>
 
-      <!-- MOBILE HAMBURGER (right) + mini hire button -->
-      <div class="flex items-center gap-3 md:hidden">
-        <button id="menuToggle" onclick="toggleMobileMenu()" class="text-3xl text-white focus:outline-none w-10 h-10 flex items-center justify-center">
-          ☰
-        </button>
-      </div>
-    </div>
+  <!-- MOBILE BUTTON -->
+  <div class="flex md:hidden">
+    <button id="menuToggle" onclick="toggleMobileMenu()" class="text-3xl text-white">
+      ☰
+    </button>
+  </div>
+
+</div>
   </div>
 
   <!-- MOBILE MENU PANEL (slide from right) - hidden by default with translate-x-full -->
-  <div id="mobileMenu" class="fixed top-0 right-0 h-full w-64 bg-black border-l-2 border-orange-500 shadow-2xl menu-slide translate-x-full z-50 md:hidden">
+  <div id="mobileMenu" class="fixed top-0 right-0 h-full w-64 bg-black border-l-2 border-orange-500 shadow-2xl transform transition-transform duration-300 translate-x-full z-50 md:hidden">
     <div class="flex justify-end p-5">
       <button onclick="toggleMobileMenu()" class="text-3xl text-white hover:text-[#ff8c00]">&times;</button>
     </div>
@@ -76,10 +79,10 @@
 </nav>
 
 <!-- ===== HERO SECTION with "Build Better" and left photo ===== -->
-<section id="home" class="pt-5 pb-5 px-[5%] min-h-screen flex items-center relative overflow-hidden bg-[#fdf8f2]">
+<section id="home" class="pt-5 pb-5 px-[5%] min-h-[90vh] md:min-h-screen flex items-center relative overflow-hidden bg-[#fdf8f2]">
   
   <!-- Social + Hire Me (left side as per your earlier code, but we'll keep it left as you had) -->
-  <div class="absolute top-20 left-[5%] z-30 flex items-center gap-3">
+<div class="hidden md:flex absolute top-20 left-[5%] z-30 items-center gap-3">
     <!-- WhatsApp -->
     <a href="https://wa.me/+918778373517?text=Hello%20Giritharan%2C%20I%20visited%20your%20portfolio%20and%20would%20like%20to%20discuss%20a%20project." target="_blank" 
        class="w-9 h-9 flex items-center justify-center rounded-lg border border-orange-200/70 bg-white text-stone-700 hover:border-[#25D366] hover:text-[#25D366] hover:shadow-sm transition-all" title="WhatsApp">
