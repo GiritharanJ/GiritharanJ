@@ -381,9 +381,5 @@ const barObs = new IntersectionObserver((entries) => {
 }, { threshold: 0.3 });
 document.querySelectorAll('.tech-fill-animate').forEach(b => barObs.observe(b));
 </script>
-<style>
-.hidden { display: none !important; }
-.tech-fill-animate { transition: width 1.2s cubic-bezier(0.4,0,0.2,1); }
-</style>
 </body>
 </html>
