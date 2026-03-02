@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -19,171 +18,158 @@
     /* WA pulse */
     @keyframes gentle-pulse { 0%,100%{box-shadow:0 8px 22px rgba(37,211,102,0.4);} 50%{box-shadow:0 8px 36px rgba(37,211,102,0.7);} }
     .wa-pulse { animation: gentle-pulse 2.5s infinite; }
-    /* mobile menu transition */
-    .menu-transition { transition: transform 0.3s ease-in-out; }
   </style>
 </head>
 <body class="antialiased selection:bg-orange-200 selection:text-stone-900">
 
-<!-- ========== CORRECTED NAVIGATION ========== -->
-<!-- Fixed header with black background, white text, orange hover -->
-<nav class="w-full top-0 left-0 w-full z-50 bg-black shadow-lg border-b border-orange-600/20">
+<!-- ========== HEADER - NOT FIXED, SCROLLS WITH CONTENT ========== -->
+<nav class="w-full bg-black shadow-lg border-b border-orange-600/20">
   <div class="max-w-7xl mx-auto px-5 sm:px-8 lg:px-12">
-    
-    <div class="flex items-center justify-between h-20">
+    <div class="flex items-center justify-between py-4 md:py-5">
+      
+      <!-- LEFT BRAND -->
+      <div class="flex flex-col leading-tight">
+        <span class="font-syne font-black text-xl md:text-2xl tracking-tight text-white">
+          Giritharan<span class="text-[#ff8c00]">.</span>Janakiraman
+        </span>
+        <span class="text-[8px] md:text-[10px] uppercase tracking-widest text-white/80 font-medium">
+          IT CONSULTANT & DEVELOPER
+        </span>
+      </div>
 
-  <!-- BRAND -->
-  <div class="flex flex-col leading-tight">
-    <span class="font-syne font-black text-xl md:text-2xl tracking-tight text-white">
-      Giritharan Janakiraman
-    </span>
-    <span class="text-[10px] uppercase tracking-widest text-white font-medium">
-      IT CONSULTANT & DEVELOPER
-    </span>
+      <!-- DESKTOP MENU (right side) - visible on md and up -->
+      <div class="hidden md:flex items-center gap-6 lg:gap-8">
+        <ul class="flex items-center gap-4 lg:gap-6 text-xs lg:text-sm uppercase tracking-wide font-medium">
+          <li><a href="#about" class="text-white hover:text-[#ff8c00] transition-colors duration-200">ABOUT</a></li>
+          <li><a href="#skills" class="text-white hover:text-[#ff8c00] transition-colors">SKILLS</a></li>
+          <li><a href="#services" class="text-white hover:text-[#ff8c00] transition-colors">SERVICES</a></li>
+          <li><a href="#projects" class="text-white hover:text-[#ff8c00] transition-colors">PROJECTS</a></li>
+          <li><a href="#contact" class="text-white hover:text-[#ff8c00] transition-colors">CONTACT</a></li>
+        </ul>
+        
+        <!-- Desktop Social Icons -->
+        <div class="flex items-center gap-2">
+          <a href="https://wa.me/918778373517" target="_blank" class="w-8 h-8 flex items-center justify-center rounded-lg border border-orange-300 bg-white text-black hover:border-[#25D366] hover:text-[#25D366] transition">
+            <svg class="w-3.5 h-3.5 fill-current" viewBox="0 0 32 32"><path d="M16 0C7.163 0 0 7.163 0 16c0 2.824.738 5.476 2.031 7.776L0 32l8.457-2.012A15.93 15.93 0 0 0 16 32c8.837 0 16-7.163 16-16S24.837 0 16 0z"/></svg>
+          </a>
+          <a href="https://github.com/GiritharanJ" target="_blank" class="w-8 h-8 flex items-center justify-center rounded-lg border border-orange-300 bg-white text-black hover:border-[#ff8c00] hover:text-[#ff8c00] transition">
+            <svg class="w-3.5 h-3.5 fill-current" viewBox="0 0 24 24"><path d="M12 0C5.374 0 0 5.373 0 12c0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23A11.509 11.509 0 0 1 12 5.803c1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576C20.566 21.797 24 17.3 24 12c0-6.627-5.373-12-12-12z"/></svg>
+          </a>
+          <a href="https://linkedin.com/in/giritharanj" target="_blank" class="w-8 h-8 flex items-center justify-center rounded-lg border border-orange-300 bg-white text-black hover:border-[#ff8c00] hover:text-[#ff8c00] transition">
+            <svg class="w-3.5 h-3.5 fill-current" viewBox="0 0 24 24"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286z"/></svg>
+          </a>
+        </div>
+        
+        <!-- Desktop Hire Button -->
+        <a href="#contact" class="bg-[#ff8c00] text-black font-syne font-bold text-xs uppercase tracking-wider px-4 py-2 rounded-xl shadow-md hover:bg-[#e65c00] hover:text-white transition-all whitespace-nowrap">
+          Hire Me
+        </a>
+      </div>
+
+      <!-- MOBILE HAMBURGER (right side) -->
+      <div class="flex md:hidden">
+        <button id="menuToggle" onclick="toggleMobileMenu()" class="text-3xl text-white focus:outline-none">
+          ☰
+        </button>
+      </div>
+    </div>
   </div>
 
-  <!-- DESKTOP MENU -->
-  <div class="w-full md:flex items-center gap-10">
-  <ul class="flex items-center gap-8 text-sm uppercase tracking-wide font-medium">
-    <li><a href="#about" class="text-white hover:text-[#ff8c00]">ABOUT</a></li>
-    <li><a href="#skills" class="text-white hover:text-[#ff8c00]">SKILLS</a></li>
-    <li><a href="#services" class="text-white hover:text-[#ff8c00]">SERVICES</a></li>
-    <li><a href="#projects" class="text-white hover:text-[#ff8c00]">PROJECTS</a></li>
-    <li><a href="#contact" class="text-white hover:text-[#ff8c00]">CONTACT</a></li>
-  </ul>
-</div>
-
-  <!-- MOBILE BUTTON -->
-  <div class="flex md:hidden">
-    <button id="menuToggle" onclick="toggleMobileMenu()" class="text-3xl text-white">
-      ☰
-    </button>
-  </div>
-
-</div>
-  </div>
-
-  <!-- MOBILE MENU PANEL (slide from right) - hidden by default with translate-x-full -->
-  <div id="mobileMenu" class="fixed top-0 right-0 h-full w-64 bg-black border-l-2 border-orange-500 shadow-2xl transform transition-transform duration-300 translate-x-full z-50 md:hidden">
+  <!-- MOBILE MENU PANEL (slide from right) -->
+  <div id="mobileMenu" class="fixed top-0 right-0 h-full w-72 bg-black border-l-2 border-orange-500 shadow-2xl transform transition-transform duration-300 translate-x-full z-50 md:hidden overflow-y-auto">
     <div class="flex justify-end p-5">
       <button onclick="toggleMobileMenu()" class="text-3xl text-white hover:text-[#ff8c00]">&times;</button>
     </div>
-    <div class="flex flex-col items-start gap-6 px-8 py-6 text-base uppercase font-medium text-white">
-      <a href="#about" onclick="toggleMobileMenu()" class="hover:text-[#ff8c00] transition w-full border-b border-white/20 pb-2">ABOUT</a>
-      <a href="#skills" onclick="toggleMobileMenu()" class="hover:text-[#ff8c00] transition w-full border-b border-white/20 pb-2">SKILLS</a>
-      <a href="#services" onclick="toggleMobileMenu()" class="hover:text-[#ff8c00] transition w-full border-b border-white/20 pb-2">SERVICES</a>
-      <a href="#projects" onclick="toggleMobileMenu()" class="hover:text-[#ff8c00] transition w-full border-b border-white/20 pb-2">PROJECTS</a>
-      <a href="#contact" onclick="toggleMobileMenu()" class="hover:text-[#ff8c00] transition w-full border-b border-white/20 pb-2">CONTACT</a>
-        <a href="https://wa.me/+918778373517" target="_blank"
-     class="w-10 h-10 flex items-center justify-center rounded-lg border border-orange-300 bg-white text-black hover:border-[#25D366] hover:text-[#25D366] transition">
-    <svg class="w-4 h-4 fill-current" viewBox="0 0 32 32"><path d="M16 0C7.163 0 0 7.163 0 16c0 2.824.738 5.476 2.031 7.776L0 32l8.457-2.012A15.93 15.93 0 0 0 16 32c8.837 0 16-7.163 16-16S24.837 0 16 0z"/></svg>
-  </a>
-
-  <!-- GitHub -->
-  <a href="https://github.com/GiritharanJ" target="_blank"
-     class="w-10 h-10 flex items-center justify-center rounded-lg border border-orange-300 bg-white text-black hover:border-[#ff8c00] hover:text-[#ff8c00] transition">
-    <svg class="w-4 h-4 fill-current" viewBox="0 0 24 24"><path d="M12 0C5.374 0 0 5.373 0 12c0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23A11.509 11.509 0 0 1 12 5.803c1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576C20.566 21.797 24 17.3 24 12c0-6.627-5.373-12-12-12z"/></svg>
-  </a>
-
-  <!-- LinkedIn -->
-  <a href="https://linkedin.com/in/giritharanj" target="_blank"
-     class="w-10 h-10 flex items-center justify-center rounded-lg border border-orange-300 bg-white text-black hover:border-[#ff8c00] hover:text-[#ff8c00] transition">
-    <svg class="w-4 h-4 fill-current" viewBox="0 0 24 24"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286z"/></svg>
-  </a>
-    <!-- Hire button integrated -->
-        <a href="#contact" class="bg-[#ff8c00] text-black font-syne font-bold text-xs uppercase tracking-wider px-5 py-2.5 rounded-xl shadow-md hover:bg-[#e65c00] hover:text-white transition-all">
-          Hire Me
+    <div class="flex flex-col items-start gap-6 px-8 py-4">
+      <!-- Navigation Links -->
+      <div class="flex flex-col w-full text-base uppercase font-medium text-white">
+        <a href="#about" onclick="toggleMobileMenu()" class="hover:text-[#ff8c00] transition w-full border-b border-white/20 py-3">ABOUT</a>
+        <a href="#skills" onclick="toggleMobileMenu()" class="hover:text-[#ff8c00] transition w-full border-b border-white/20 py-3">SKILLS</a>
+        <a href="#services" onclick="toggleMobileMenu()" class="hover:text-[#ff8c00] transition w-full border-b border-white/20 py-3">SERVICES</a>
+        <a href="#projects" onclick="toggleMobileMenu()" class="hover:text-[#ff8c00] transition w-full border-b border-white/20 py-3">PROJECTS</a>
+        <a href="#contact" onclick="toggleMobileMenu()" class="hover:text-[#ff8c00] transition w-full border-b border-white/20 py-3">CONTACT</a>
+      </div>
+      
+      <!-- Mobile Social Icons -->
+      <div class="flex items-center gap-3 mt-4">
+        <a href="https://wa.me/918778373517" target="_blank" class="w-10 h-10 flex items-center justify-center rounded-lg border border-orange-300 bg-white text-black hover:border-[#25D366] hover:text-[#25D366] transition">
+          <svg class="w-4 h-4 fill-current" viewBox="0 0 32 32"><path d="M16 0C7.163 0 0 7.163 0 16c0 2.824.738 5.476 2.031 7.776L0 32l8.457-2.012A15.93 15.93 0 0 0 16 32c8.837 0 16-7.163 16-16S24.837 0 16 0z"/></svg>
         </a>
+        <a href="https://github.com/GiritharanJ" target="_blank" class="w-10 h-10 flex items-center justify-center rounded-lg border border-orange-300 bg-white text-black hover:border-[#ff8c00] hover:text-[#ff8c00] transition">
+          <svg class="w-4 h-4 fill-current" viewBox="0 0 24 24"><path d="M12 0C5.374 0 0 5.373 0 12c0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23A11.509 11.509 0 0 1 12 5.803c1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576C20.566 21.797 24 17.3 24 12c0-6.627-5.373-12-12-12z"/></svg>
+        </a>
+        <a href="https://linkedin.com/in/giritharanj" target="_blank" class="w-10 h-10 flex items-center justify-center rounded-lg border border-orange-300 bg-white text-black hover:border-[#ff8c00] hover:text-[#ff8c00] transition">
+          <svg class="w-4 h-4 fill-current" viewBox="0 0 24 24"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286z"/></svg>
+        </a>
+      </div>
+      
+      <!-- Mobile Hire Button -->
+      <a href="#contact" onclick="toggleMobileMenu()" class="w-full bg-[#ff8c00] text-black font-syne font-bold text-sm uppercase tracking-wider py-3 rounded-xl shadow-md text-center hover:bg-[#e65c00] hover:text-white transition-all mt-2">
+        Hire Me
+      </a>
     </div>
   </div>
 </nav>
- 
 
-<!-- ===== HERO SECTION with "Build Better" and left photo ===== -->
-<section id="home" class="pt-5 pb-5 px-[5%] min-h-[90vh] md:min-h-screen flex items-center relative overflow-hidden bg-[#fdf8f2]">
-    <div class="flex md:flex items-center gap-4 mt-6">
-  <!-- WhatsApp -->
-  <a href="https://wa.me/+918778373517" target="_blank"
-     class="w-10 h-10 flex items-center justify-center rounded-lg border border-orange-300 bg-white text-black hover:border-[#25D366] hover:text-[#25D366] transition">
-    <svg class="w-4 h-4 fill-current" viewBox="0 0 32 32"><path d="M16 0C7.163 0 0 7.163 0 16c0 2.824.738 5.476 2.031 7.776L0 32l8.457-2.012A15.93 15.93 0 0 0 16 32c8.837 0 16-7.163 16-16S24.837 0 16 0z"/></svg>
-  </a>
-
-  <!-- GitHub -->
-  <a href="https://github.com/GiritharanJ" target="_blank"
-     class="w-10 h-10 flex items-center justify-center rounded-lg border border-orange-300 bg-white text-black hover:border-[#ff8c00] hover:text-[#ff8c00] transition">
-    <svg class="w-4 h-4 fill-current" viewBox="0 0 24 24"><path d="M12 0C5.374 0 0 5.373 0 12c0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23A11.509 11.509 0 0 1 12 5.803c1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576C20.566 21.797 24 17.3 24 12c0-6.627-5.373-12-12-12z"/></svg>
-  </a>
-
-  <!-- LinkedIn -->
-  <a href="https://linkedin.com/in/giritharanj" target="_blank"
-     class="w-10 h-10 flex items-center justify-center rounded-lg border border-orange-300 bg-white text-black hover:border-[#ff8c00] hover:text-[#ff8c00] transition">
-    <svg class="w-4 h-4 fill-current" viewBox="0 0 24 24"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286z"/></svg>
-  </a>
-    <!-- Hire button integrated -->
-        <a href="#contact" class="bg-[#ff8c00] text-black font-syne font-bold text-xs uppercase tracking-wider px-5 py-2.5 rounded-xl shadow-md hover:bg-[#e65c00] hover:text-white transition-all">
-          Hire Me
-        </a>
-  </div>   
-
+<!-- ===== HERO SECTION ===== -->
+<section id="home" class="pt-10 pb-10 px-[5%] min-h-[90vh] md:min-h-screen flex items-center relative overflow-hidden bg-[#fdf8f2]">
   <!-- background subtle pattern -->
   <div class="absolute inset-0 pointer-events-none" style="background-image: radial-gradient(circle, rgba(255,140,0,0.06) 1.5px, transparent 1.5px); background-size: 36px 36px; mask-image: radial-gradient(ellipse 80% 80% at 50% 50%, black 0%, transparent 100%);"></div>
   
   <!-- main grid: left photo + right content -->
-  <div class="relative z-10 w-full max-w-7xl mx-auto grid md:grid-cols-2 gap-12 items-center">
-    <!-- LEFT: PHOTO (Giri.JPG) -->
+  <div class="relative z-10 w-full max-w-7xl mx-auto grid md:grid-cols-2 gap-8 md:gap-12 items-center">
+    <!-- LEFT: PHOTO -->
     <div class="flex justify-center md:justify-end order-2 md:order-1">
-      <div class="relative w-64 h-64 md:w-80 md:h-80 lg:w-96 lg:h-96 rounded-full border-8 border-white shadow-2xl overflow-hidden bg-gradient-to-br from-amber-100 to-orange-50">
-        <!-- your image: Giri.JPG -->
+      <div class="relative w-56 h-56 sm:w-64 sm:h-64 md:w-80 md:h-80 lg:w-96 lg:h-96 rounded-full border-4 md:border-8 border-white shadow-2xl overflow-hidden bg-gradient-to-br from-amber-100 to-orange-50">
         <img src="Giri.JPG" alt="Giritharan J" class="w-full h-full object-cover">
       </div>
     </div>
 
     <!-- RIGHT: hero content -->
     <div class="order-1 md:order-2">
-      <!-- available tag -->
-      <div class="inline-flex items-center gap-2 bg-white border border-orange-300 text-[#ff8c00] text-xs uppercase tracking-widest px-4 py-2 rounded-md mb-6 font-semibold shadow-sm">
+    <!-- available tag -->
+    <div class="inline-flex items-center gap-2 bg-white border border-orange-300 text-[#ff8c00] text-xs uppercase tracking-widest px-3 py-1.5 md:px-4 md:py-2 rounded-md mb-4 md:mb-6 font-semibold shadow-sm">
         <span class="w-2 h-2 bg-[#25D366] rounded-full animate-pulse"></span> 
-        <span class="text-black/70">Available for Projects · Chennai</span>
-      </div>
+        <span class="text-black/70 text-[10px] md:text-xs">Available for Projects · Chennai</span>
+    </div>
       
-      <!-- main title: "Build Better" with orange accent (as per image) -->
-      <h1 class="font-syne font-extrabold text-5xl md:text-6xl lg:text-7xl leading-[1.1] tracking-tight text-black">
+    <!-- main title -->
+    <h1 class="font-syne font-extrabold text-4xl sm:text-5xl md:text-6xl lg:text-7xl leading-[1.1] tracking-tight text-black">
         Build<br>
         <span class="text-[#ff8c00]">Better.</span>
-      </h1>
+    </h1>
       
-      <!-- description -->
-      <p class="text-black/80 text-lg max-w-lg mt-6 font-light leading-relaxed">
+    <!-- description -->
+    <p class="text-black/80 text-sm sm:text-base md:text-lg max-w-lg mt-4 md:mt-6 font-light leading-relaxed">
         IT Analyst & Business Technology Consultant with 8+ years turning complex business problems into clean, efficient digital solutions — websites, cloud, CRM, automation.
-      </p>
+    </p>
       
-      <!-- two buttons -->
-      <div class="flex flex-wrap gap-4 mt-8">
-        <a href="#contact" class="bg-gradient-to-r from-[#ff8c00] to-[#e65c00] text-white px-7 py-3.5 rounded-xl font-syne font-bold shadow-lg hover:shadow-2xl hover:-translate-y-1 transition-all">Start a Project →</a>
-        <a href="#projects" class="bg-white border-2 border-[#ff8c00]/70 text-black px-7 py-3.5 rounded-xl font-syne font-bold flex items-center gap-2 shadow-sm hover:bg-orange-50 hover:border-[#ff8c00] transition-all"><span>⚡</span> View My Work</a>
-      </div>
+    <!-- two buttons -->
+    <div class="flex flex-wrap gap-3 md:gap-4 mt-6 md:mt-8">
+        <a href="#contact" class="bg-gradient-to-r from-[#ff8c00] to-[#e65c00] text-white px-5 md:px-7 py-2.5 md:py-3.5 rounded-xl font-syne font-bold text-sm md:text-base shadow-lg hover:shadow-2xl hover:-translate-y-1 transition-all">Start a Project →</a>
+        <a href="#projects" class="bg-white border-2 border-[#ff8c00]/70 text-black px-5 md:px-7 py-2.5 md:py-3.5 rounded-xl font-syne font-bold text-sm md:text-base flex items-center gap-2 shadow-sm hover:bg-orange-50 hover:border-[#ff8c00] transition-all"><span>⚡</span> View My Work</a>
+    </div>
 
-      <!-- stats card -->
-      <div class="flex gap-8 bg-white border border-orange-200 rounded-2xl p-6 pr-10 mt-12 w-fit shadow-md">
-        <div><span class="font-syne font-extrabold text-3xl text-[#ff8c00]">8+</span><div class="text-xs uppercase text-black/60 tracking-wider mt-1">Years Exp</div></div>
+    <!-- stats card -->
+    <div class="flex gap-4 md:gap-8 bg-white border border-orange-200 rounded-xl md:rounded-2xl p-4 md:p-6 pr-6 md:pr-10 mt-8 md:mt-12 w-fit shadow-md">
+        <div><span class="font-syne font-extrabold text-2xl md:text-3xl text-[#ff8c00]">8+</span><div class="text-[8px] md:text-xs uppercase text-black/60 tracking-wider mt-1">Years Exp</div></div>
         <div class="w-px bg-orange-200"></div>
-        <div><span class="font-syne font-extrabold text-3xl text-[#ff8c00]">10+</span><div class="text-xs uppercase text-black/60 tracking-wider mt-1">Projects</div></div>
+        <div><span class="font-syne font-extrabold text-2xl md:text-3xl text-[#ff8c00]">10+</span><div class="text-[8px] md:text-xs uppercase text-black/60 tracking-wider mt-1">Projects</div></div>
         <div class="w-px bg-orange-200"></div>
-        <div><span class="font-syne font-extrabold text-3xl text-[#ff8c00]">99%</span><div class="text-xs uppercase text-black/60 tracking-wider mt-1">Accuracy</div></div>
-      </div>
+        <div><span class="font-syne font-extrabold text-2xl md:text-3xl text-[#ff8c00]">99%</span><div class="text-[8px] md:text-xs uppercase text-black/60 tracking-wider mt-1">Accuracy</div></div>
+    </div>
     </div>
   </div>
 </section>
 
-
-<!-- ABOUT, SKILLS, SERVICES etc — adapted with tailwind, keeping same sections but simplified + reveal script  -->
-<section id="about" class="py-24 px-[5%] bg-[#fff9f2]">
+<!-- ABOUT SECTION -->
+<section id="about" class="py-16 md:py-24 px-[5%] bg-[#fff9f2]">
   <div class="max-w-7xl mx-auto">
     <div class="reveal"><span class="text-[#ff8c00] font-bold text-xs tracking-[3px] uppercase">About Me</span></div>
-    <h2 class="reveal font-syne font-extrabold text-3xl md:text-4xl tracking-tight text-stone-800 mt-2">Manual to Digital —<br>That's My Mission</h2>
+    <h2 class="reveal font-syne font-extrabold text-2xl md:text-3xl lg:text-4xl tracking-tight text-stone-800 mt-2">Manual to Digital —<br>That's My Mission</h2>
     <div class="w-14 h-1 bg-gradient-to-r from-[#ff8c00] to-[#e65c00] rounded mt-4 reveal"></div>
 
-    <div class="grid md:grid-cols-2 gap-16 mt-14">
+    <div class="grid md:grid-cols-2 gap-10 md:gap-16 mt-10 md:mt-14">
       <div class="reveal text-stone-600 text-sm leading-relaxed space-y-3">
         <p>I help businesses move from <strong>manual operations to smart digital systems.</strong> With 8+ years of experience in IT analysis and enterprise environments, I have handled multiple technology-driven projects across production systems, automation workflows, infrastructure setups, and business applications.</p>
         <p><strong>My approach is simple:</strong></p>
@@ -195,27 +181,27 @@
         <p>I support businesses in: Business Websites, Custom Apps, Billing Automation, IT Infrastructure, Digital Transformation for SMBs.</p>
       </div>
       <div class="space-y-4 reveal">
-        <div class="bg-white border-l-4 border-[#ff8c00] rounded-xl p-5 shadow-sm hover-scale"><h4 class="font-syne font-bold text-sm text-[#ff8c00]">⏱ Timeline & Delivery</h4><p class="text-xs text-stone-500 mt-1">Clear schedule after requirement discussion.</p></div>
-        <div class="bg-white border-l-4 border-[#ff8c00] rounded-xl p-5 shadow-sm hover-scale"><h4 class="font-syne font-bold text-sm text-[#ff8c00]">🌍 Remote & Onsite</h4><p class="text-xs text-stone-500 mt-1">Available for international projects.</p></div>
-        <div class="bg-white border-l-4 border-[#ff8c00] rounded-xl p-5 shadow-sm hover-scale"><h4 class="font-syne font-bold text-sm text-[#ff8c00]">💡 Platform-Agnostic</h4><p class="text-xs text-stone-500 mt-1">Best-fit tech, low cost, no lock-in.</p></div>
+        <div class="bg-white border-l-4 border-[#ff8c00] rounded-xl p-5 shadow-sm hover:shadow-md transition"><h4 class="font-syne font-bold text-sm text-[#ff8c00]">⏱ Timeline & Delivery</h4><p class="text-xs text-stone-500 mt-1">Clear schedule after requirement discussion.</p></div>
+        <div class="bg-white border-l-4 border-[#ff8c00] rounded-xl p-5 shadow-sm hover:shadow-md transition"><h4 class="font-syne font-bold text-sm text-[#ff8c00]">🌍 Remote & Onsite</h4><p class="text-xs text-stone-500 mt-1">Available for international projects.</p></div>
+        <div class="bg-white border-l-4 border-[#ff8c00] rounded-xl p-5 shadow-sm hover:shadow-md transition"><h4 class="font-syne font-bold text-sm text-[#ff8c00]">💡 Platform-Agnostic</h4><p class="text-xs text-stone-500 mt-1">Best-fit tech, low cost, no lock-in.</p></div>
       </div>
     </div>
   </div>
 </section>
 
-<!-- SKILLS section (tech bars) -->
-<section id="skills" class="py-24 px-[5%] bg-[#fdf8f2]">
+<!-- SKILLS SECTION -->
+<section id="skills" class="py-16 md:py-24 px-[5%] bg-[#fdf8f2]">
   <div class="max-w-7xl mx-auto">
     <div class="reveal"><span class="text-[#ff8c00] font-bold text-xs tracking-[3px] uppercase">Technical Skills</span></div>
-    <h2 class="reveal font-syne font-extrabold text-3xl md:text-4xl tracking-tight text-stone-800 mt-2">What I Bring<br>to the Table</h2>
+    <h2 class="reveal font-syne font-extrabold text-2xl md:text-3xl lg:text-4xl tracking-tight text-stone-800 mt-2">What I Bring<br>to the Table</h2>
     <div class="w-14 h-1 bg-gradient-to-r from-[#ff8c00] to-[#e65c00] rounded mt-4 reveal"></div>
 
-    <div class="grid md:grid-cols-2 gap-16 mt-14">
+    <div class="grid md:grid-cols-2 gap-10 md:gap-16 mt-10 md:mt-14">
       <div class="grid grid-cols-2 gap-3 reveal">
-        <div class="bg-white p-5 rounded-xl border border-orange-100 hover-scale"><span class="text-3xl">🌐</span><h4 class="font-syne font-bold text-sm mt-2">Web Dev</h4><p class="text-xs text-stone-500">PHP, HTML, CSS, JS</p></div>
-        <div class="bg-white p-5 rounded-xl border border-orange-100 hover-scale"><span class="text-3xl">☁️</span><h4 class="font-syne font-bold text-sm mt-2">Cloud/Azure</h4><p class="text-xs text-stone-500">Pipelines, Data Factory</p></div>
-        <div class="bg-white p-5 rounded-xl border border-orange-100 hover-scale"><span class="text-3xl">🗄️</span><h4 class="font-syne font-bold text-sm mt-2">SQL Server</h4><p class="text-xs text-stone-500">Perf tuning, monitoring</p></div>
-        <div class="bg-white p-5 rounded-xl border border-orange-100 hover-scale"><span class="text-3xl">🤖</span><h4 class="font-syne font-bold text-sm mt-2">CRM/Automation</h4><p class="text-xs text-stone-500">D365, Zoho, n8n</p></div>
+        <div class="bg-white p-5 rounded-xl border border-orange-100 hover:shadow-md transition"><span class="text-3xl">🌐</span><h4 class="font-syne font-bold text-sm mt-2">Web Dev</h4><p class="text-xs text-stone-500">PHP, HTML, CSS, JS</p></div>
+        <div class="bg-white p-5 rounded-xl border border-orange-100 hover:shadow-md transition"><span class="text-3xl">☁️</span><h4 class="font-syne font-bold text-sm mt-2">Cloud/Azure</h4><p class="text-xs text-stone-500">Pipelines, Data Factory</p></div>
+        <div class="bg-white p-5 rounded-xl border border-orange-100 hover:shadow-md transition"><span class="text-3xl">🗄️</span><h4 class="font-syne font-bold text-sm mt-2">SQL Server</h4><p class="text-xs text-stone-500">Perf tuning, monitoring</p></div>
+        <div class="bg-white p-5 rounded-xl border border-orange-100 hover:shadow-md transition"><span class="text-3xl">🤖</span><h4 class="font-syne font-bold text-sm mt-2">CRM/Automation</h4><p class="text-xs text-stone-500">D365, Zoho, n8n</p></div>
       </div>
       <div class="space-y-5 reveal">
         <!-- tech bars -->
@@ -227,46 +213,71 @@
   </div>
 </section>
 
-<!-- PROJECTS (sample) -->
-<section id="projects" class="py-24 px-[5%] bg-[#fff9f2]">
+<!-- SERVICES SECTION -->
+<section id="services" class="py-16 md:py-24 px-[5%] bg-[#fff9f2]">
   <div class="max-w-7xl mx-auto">
-    <div class="reveal"><span class="text-[#ff8c00] font-bold text-xs tracking-[3px] uppercase">Portfolio</span></div>
-    <h2 class="reveal font-syne font-extrabold text-3xl md:text-4xl tracking-tight">Featured Projects</h2>
+    <div class="reveal"><span class="text-[#ff8c00] font-bold text-xs tracking-[3px] uppercase">Services</span></div>
+    <h2 class="reveal font-syne font-extrabold text-2xl md:text-3xl lg:text-4xl tracking-tight text-stone-800 mt-2">What I Offer</h2>
     <div class="w-14 h-1 bg-gradient-to-r from-[#ff8c00] to-[#e65c00] rounded mt-4 reveal"></div>
-    <div class="grid md:grid-cols-3 gap-5 mt-14">
-      <div class="bg-white rounded-2xl p-6 border border-orange-100 reveal hover-scale"><span class="text-2xl">🏍️</span><h3 class="font-syne font-bold mt-3">Royal Enfield – Vector DB</h3><p class="text-xs text-stone-500 mt-1">Dynamics 365, Azure, SAP integration. 99% accuracy.</p></div>
-      <div class="bg-white rounded-2xl p-6 border border-orange-100 reveal hover-scale"><span class="text-2xl">⚡</span><h3 class="font-syne font-bold mt-3">CRM Automation (n8n+Zoho)</h3><p class="text-xs text-stone-500">Lead form → webhook → Zoho.</p></div>
-      <div class="bg-white rounded-2xl p-6 border border-orange-100 reveal hover-scale"><span class="text-2xl">🛍️</span><h3 class="font-syne font-bold mt-3">Bhuvana Dress – WhatsApp</h3><p class="text-xs text-stone-500">Catalogue with instant WhatsApp order.</p></div>
+    
+    <div class="grid md:grid-cols-3 gap-5 mt-10 md:mt-14">
+      <div class="bg-white rounded-xl p-6 border border-orange-100 reveal hover:shadow-lg transition">
+        <span class="text-3xl">🌐</span>
+        <h3 class="font-syne font-bold text-lg mt-3">Web Development</h3>
+        <p class="text-sm text-stone-600 mt-2">Responsive business websites, portals, and web applications.</p>
+      </div>
+      <div class="bg-white rounded-xl p-6 border border-orange-100 reveal hover:shadow-lg transition">
+        <span class="text-3xl">☁️</span>
+        <h3 class="font-syne font-bold text-lg mt-3">Cloud Solutions</h3>
+        <p class="text-sm text-stone-600 mt-2">Azure setup, deployment, and cloud infrastructure management.</p>
+      </div>
+      <div class="bg-white rounded-xl p-6 border border-orange-100 reveal hover:shadow-lg transition">
+        <span class="text-3xl">🤖</span>
+        <h3 class="font-syne font-bold text-lg mt-3">CRM & Automation</h3>
+        <p class="text-sm text-stone-600 mt-2">Dynamics 365, Zoho, n8n workflows, and process automation.</p>
+      </div>
     </div>
   </div>
 </section>
 
-<!-- CONTACT (tailwind) -->
-<section id="contact" class="py-24 px-[5%] bg-[#fdf8f2]">
-  <div class="max-w-7xl mx-auto grid md:grid-cols-2 gap-14">
+<!-- PROJECTS SECTION -->
+<section id="projects" class="py-16 md:py-24 px-[5%] bg-[#fdf8f2]">
+  <div class="max-w-7xl mx-auto">
+    <div class="reveal"><span class="text-[#ff8c00] font-bold text-xs tracking-[3px] uppercase">Portfolio</span></div>
+    <h2 class="reveal font-syne font-extrabold text-2xl md:text-3xl lg:text-4xl tracking-tight">Featured Projects</h2>
+    <div class="w-14 h-1 bg-gradient-to-r from-[#ff8c00] to-[#e65c00] rounded mt-4 reveal"></div>
+    <div class="grid md:grid-cols-3 gap-5 mt-10 md:mt-14">
+      <div class="bg-white rounded-2xl p-6 border border-orange-100 reveal hover:shadow-lg transition"><span class="text-2xl">🏍️</span><h3 class="font-syne font-bold mt-3">Royal Enfield – Vector DB</h3><p class="text-xs text-stone-500 mt-1">Dynamics 365, Azure, SAP integration. 99% accuracy.</p></div>
+      <div class="bg-white rounded-2xl p-6 border border-orange-100 reveal hover:shadow-lg transition"><span class="text-2xl">⚡</span><h3 class="font-syne font-bold mt-3">CRM Automation (n8n+Zoho)</h3><p class="text-xs text-stone-500 mt-1">Lead form → webhook → Zoho.</p></div>
+      <div class="bg-white rounded-2xl p-6 border border-orange-100 reveal hover:shadow-lg transition"><span class="text-2xl">🛍️</span><h3 class="font-syne font-bold mt-3">Bhuvana Dress – WhatsApp</h3><p class="text-xs text-stone-500 mt-1">Catalogue with instant WhatsApp order.</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- CONTACT SECTION -->
+<section id="contact" class="py-16 md:py-24 px-[5%] bg-[#fff9f2]">
+  <div class="max-w-7xl mx-auto grid md:grid-cols-2 gap-8 md:gap-14">
     <div class="reveal space-y-4">
       <span class="text-[#ff8c00] font-bold text-xs tracking-[3px] uppercase">Get in touch</span>
-      <h2 class="font-syne font-extrabold text-4xl tracking-tight">Let's Work<br>Together</h2>
+      <h2 class="font-syne font-extrabold text-3xl md:text-4xl tracking-tight">Let's Work<br>Together</h2>
       <div class="w-14 h-1 bg-gradient-to-r from-[#ff8c00] to-[#e65c00] rounded"></div>
       <div class="pt-4 space-y-3">
         <a href="tel:+918778373517" class="flex items-center gap-4 p-4 bg-white rounded-xl border border-orange-100 hover:border-[#ff8c00] transition">📞 <div><span class="text-xs text-stone-500">Call</span><p class="font-medium">+91 87783 73517</p></div></a>
         <a href="https://wa.me/918778373517" class="flex items-center gap-4 p-4 bg-white rounded-xl border border-orange-100 hover:border-[#25D366] transition">💬 <div><span class="text-xs text-stone-500">WhatsApp</span><p class="font-medium">Chat directly</p></div></a>
         <a href="mailto:giritharanjanakiraman@gmail.com" class="flex items-center gap-4 p-4 bg-white rounded-xl border border-orange-100 hover:border-[#ff8c00] transition">📧 <div><span class="text-xs text-stone-500">Email</span><p class="font-medium">giritharanjanakiraman@gmail.com</p></div></a>
-<a href="https://linkedin.com/in/giritharanj" class="flex items-center gap-4 p-4 bg-white rounded-xl border border-orange-100 hover:border-[#ff8c00] transition">📧 <div><span class="text-xs text-stone-500">Linkedin</span><p class="font-medium">
-Giritharan Janakiraman
-Business Technology Consultant | Web & Application Solutions</p></div></a>      
-
-</div>
+        <a href="https://linkedin.com/in/giritharanj" class="flex items-center gap-4 p-4 bg-white rounded-xl border border-orange-100 hover:border-[#ff8c00] transition">💼 <div><span class="text-xs text-stone-500">LinkedIn</span><p class="font-medium">Giritharan Janakiraman</p></div></a>
+      </div>
     </div>
+  </div>
 </section>
 
-<!-- footer -->
+<!-- FOOTER -->
 <footer class="py-6 px-[5%] border-t border-orange-100 flex flex-wrap justify-between text-xs text-stone-500">
   <div>© 2025 <strong class="text-[#ff8c00]">Giritharan Janakiraman</strong> — Chennai</div>
   <div class="flex gap-5"><a href="https://linkedin.com/in/giritharanj" class="hover:text-[#ff8c00]">LinkedIn</a><a href="https://github.com/GiritharanJ" class="hover:text-[#ff8c00]">GitHub</a><a href="#" class="hover:text-[#ff8c00]">Email</a></div>
 </footer>
 
-<!-- WA chatbot simple -->
+<!-- WA chatbot -->
 <div class="fixed bottom-6 right-6 z-40 flex flex-col items-end gap-2">
   <div id="waBubble" class="bg-white border border-orange-100 rounded-2xl shadow-xl w-64 p-4 hidden flex-col gap-2">
     <div class="flex items-center gap-2"><div class="w-8 h-8 bg-gradient-to-br from-[#ff8c00] to-[#e65c00] rounded-full flex items-center justify-center text-white text-xs">G</div><div><p class="font-bold text-sm">Giritharan</p><span class="text-[10px] text-[#25D366]">● Online</span></div></div>
@@ -281,10 +292,7 @@ Business Technology Consultant | Web & Application Solutions</p></div></a>
 <!-- toast -->
 <div id="toast" class="fixed bottom-20 left-1/2 -translate-x-1/2 bg-white border border-[#ff8c00] text-stone-700 px-6 py-3 rounded-xl shadow-xl text-sm transition-all duration-500 opacity-0 translate-y-8">✅ Message sent! I'll reply within 24h.</div>
 
-<!-- minimal script for reveal, tech bars, WA toggle, form toast -->
 <script>
-// unified script with proper functions
-
 // Mobile menu toggle
 window.toggleMobileMenu = function() {
   const menu = document.getElementById('mobileMenu');
@@ -302,7 +310,7 @@ window.toggleWA = function() {
   b.classList.toggle('hidden'); 
 };
 
-// Form handler (if needed)
+// Form handler
 window.handleSubmit = function(e) { 
   e.preventDefault(); 
   const t = document.getElementById('toast'); 
@@ -318,7 +326,7 @@ window.handleSubmit = function(e) {
 document.addEventListener('keydown', function(e) {
   if (e.key === 'Escape') {
     const menu = document.getElementById('mobileMenu');
-    if (!menu.classList.contains('translate-x-full')) {
+    if (menu && !menu.classList.contains('translate-x-full')) {
       menu.classList.add('translate-x-full');
       document.body.style.overflow = '';
     }
@@ -339,9 +347,9 @@ window.addEventListener('click', function(event) {
 // Reveal on scroll
 (function() {
   const obs = new IntersectionObserver((entries) => {
-    entries.forEach((e, i) => { 
+    entries.forEach((e) => { 
       if (e.isIntersecting) { 
-        setTimeout(() => e.target.classList.add('visible'), i*50); 
+        e.target.classList.add('visible'); 
         obs.unobserve(e.target); 
       } 
     });
@@ -362,8 +370,16 @@ window.addEventListener('click', function(event) {
     }
   });
 })();
+
+// Tech bars animation
+const barObs = new IntersectionObserver((entries) => {
+  entries.forEach(e => { if (e.isIntersecting) { e.target.style.width = e.target.dataset.width + '%'; barObs.unobserve(e.target); } });
+}, { threshold: 0.3 });
+document.querySelectorAll('.tech-fill-animate').forEach(b => barObs.observe(b));
 </script>
-<!-- fix initial hidden state for WA bubble -->
-<style>.hidden { display: none !important; }</style>
+<style>
+.hidden { display: none !important; }
+.tech-fill-animate { transition: width 1.2s cubic-bezier(0.4,0,0.2,1); }
+</style>
 </body>
 </html>
