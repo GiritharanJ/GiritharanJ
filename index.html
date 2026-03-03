@@ -42,6 +42,78 @@
   display: flex;
   gap: 1rem;
 }
+/* Animation Keyframes - keeping the same */
+@keyframes pulse-slow {
+  0%, 100% { opacity: 0.3; transform: scale(1); }
+  50% { opacity: 0.6; transform: scale(1.1); }
+}
+
+@keyframes pulse-slower {
+  0%, 100% { opacity: 0.2; transform: scale(1); }
+  50% { opacity: 0.5; transform: scale(1.2); }
+}
+
+@keyframes slide-right {
+  0% { transform: translateX(-100%); opacity: 0; }
+  50% { opacity: 1; }
+  100% { transform: translateX(100%); opacity: 0; }
+}
+
+@keyframes slide-left {
+  0% { transform: translateX(100%); opacity: 0; }
+  50% { opacity: 1; }
+  100% { transform: translateX(-100%); opacity: 0; }
+}
+
+@keyframes slide-up {
+  0% { transform: translateY(100%); opacity: 0; }
+  50% { opacity: 1; }
+  100% { transform: translateY(-100%); opacity: 0; }
+}
+
+@keyframes float {
+  0%, 100% { transform: translateY(0) translateX(0); }
+  25% { transform: translateY(-20px) translateX(10px); }
+  50% { transform: translateY(-10px) translateX(20px); }
+  75% { transform: translateY(10px) translateX(10px); }
+}
+
+.animate-pulse-slow {
+  animation: pulse-slow 8s ease-in-out infinite;
+}
+
+.animate-pulse-slower {
+  animation: pulse-slower 12s ease-in-out infinite;
+}
+
+.animate-slide-right {
+  animation: slide-right 15s linear infinite;
+}
+
+.animate-slide-left {
+  animation: slide-left 15s linear infinite;
+}
+
+.animate-slide-up {
+  animation: slide-up 12s linear infinite;
+}
+
+.animate-float {
+  animation: float 10s ease-in-out infinite;
+}
+
+.animate-float-delay {
+  animation: float 12s ease-in-out infinite 2s;
+}
+
+.animate-float-slow {
+  animation: float 15s ease-in-out infinite;
+}
+
+/* Hover effects */
+.group:hover .group-hover\:scale-110 {
+  transform: scale(1.1);
+}
   </style>
 </head>
 <body class="antialiased selection:bg-orange-200 selection:text-stone-900">
@@ -156,7 +228,7 @@
     <!-- available tag -->
     <div class="inline-flex items-center gap-2 bg-white border border-orange-300 text-[#ff8c00] text-xs uppercase tracking-widest px-3 py-1.5 md:px-4 md:py-2 rounded-md mb-4 md:mb-6 font-semibold shadow-sm">
         <span class="w-2 h-2 bg-[#25D366] rounded-full animate-pulse"></span> 
-        <span class="text-black/100 text-[6px] md:text-xs">Available for Digital Transformation Projects · Chennai & Remote</span>
+        <span class="text-black/100 text-[4px] md:text-xs">Available for Digital Transformation Projects · Chennai & Remote</span>
     </div>
       
     <!-- main title -->
@@ -189,13 +261,13 @@
 </section>
 
 <!-- ABOUT SECTION WITH SKILLS INCLUDED -->
-<section id="about" class="py-12 md:py-16 px-[5%] bg-[#f2d6b3]">
+<section id="about" class="py-12 md:py-16 px-[5%] bg-[#0f0b07]">
   <div class="max-w-7xl mx-auto">
     <!-- About Me Header -->
     <div class="reveal">
       <span class="text-[#ff8c00] font-bold text-xs tracking-[3px] uppercase">About Me</span>
     </div>
-    <h2 class="reveal font-syne font-extrabold text-2xl md:text-3xl lg:text-4xl tracking-tight text-stone-800 mt-2">
+    <h2 class="reveal font-extrabold text-3xl md:text-4xl tracking-tight text-white">
       Manual to Digital —<br>That's My Mission
     </h2>
     <div class="w-14 h-1 bg-gradient-to-r from-[#ff8c00] to-[#e65c00] rounded mt-4 reveal"></div>
@@ -203,7 +275,7 @@
     <!-- About Text + Feature Cards - First Row -->
     <div class="grid md:grid-cols-2 gap-10 md:gap-16 mt-10 md:mt-14">
       <!-- Left Column - About Text -->
-      <div class="reveal text-stone-600 text-sm leading-relaxed space-y-3">
+      <div class="reveal text-stone-600 text-white leading-relaxed space-y-3">
         <p>I help businesses move from <strong>manual operations to smart digital systems.</strong> With 8+ years of experience in IT analysis and enterprise environments, I have handled multiple technology-driven projects across production systems, automation workflows, infrastructure setups, and business applications.</p>
         <p><strong>My approach is simple:</strong></p>
         <ul class="space-y-2">
@@ -234,7 +306,7 @@
         
         <!-- Download CV Button - Horizontal White Background -->
         <div class="bg-white rounded-xl p-4 shadow-sm flex justify-center">
-          <a href="/assets/Resume-giri.pdf" download class="inline-flex items-center gap-2 bg-[#ff8c00] text-white px-6 py-3 rounded-lg font-syne font-bold text-sm shadow-md hover:bg-[#e65c00] hover:shadow-lg transition-all">
+          <a href="Resume-giri.pdf" download class="inline-flex items-center gap-2 bg-[#ff8c00] text-white px-6 py-3 rounded-lg font-syne font-bold text-sm shadow-md hover:bg-[#e65c00] hover:shadow-lg transition-all">
             <span>📄</span> Download CV
           </a>
         </div>
@@ -246,7 +318,7 @@
       <!-- Skills Header -->
       <div class="text-center mb-8 reveal">
         <span class="text-[#ff8c00] font-bold text-xs tracking-[3px] uppercase">Technical Skills</span>
-        <h3 class="font-syne font-extrabold text-2xl md:text-3xl tracking-tight text-stone-800 mt-2">What I Bring to the Table</h3>
+        <h3 class="font-syne font-extrabold text-3xl md:text-4xl tracking-tight text-white">What I Bring to the Table</h3>
         <div class="w-14 h-1 bg-gradient-to-r from-[#ff8c00] to-[#e65c00] rounded mx-auto mt-3"></div>
       </div>
 
@@ -384,7 +456,7 @@
 
 
 <!-- SERVICES SECTION -->
-<section id="services" class="py-13 md:py-20 px-[5%] bg-[#fff9f2]">
+<section id="services" class="py-12 md:py-16 px-[4%] bg-[#f2d6b3]">
   <div class="max-w-7xl mx-auto">
     <div class="reveal"><span class="text-[#ff8c00] font-bold text-xs tracking-[3px] uppercase">Services</span></div>
     <h2 class="reveal font-syne font-extrabold text-2xl md:text-3xl lg:text-4xl tracking-tight text-stone-800 mt-2">What I Offer</h2>
@@ -420,36 +492,195 @@
   </div>
 </section>
 
+
 <!-- PROJECTS SECTION -->
-<section id="projects" class="py-16 md:py-24 px-[5%] bg-[#fdf8f2]">
+<!-- PROJECTS SECTION -->
+<section id="projects" class="py-16 md:py-24 px-[5%] bg-[#0f0b07]">
   <div class="max-w-7xl mx-auto">
-    <div class="reveal"><span class="text-[#ff8c00] font-bold text-xs tracking-[3px] uppercase">Portfolio</span></div>
-    <h2 class="reveal font-syne font-extrabold text-2xl md:text-3xl lg:text-4xl tracking-tight">Featured Projects</h2>
+    <div class="reveal"><span class="text-[#ff8c00] font-bold text-xs tracking-[3px] uppercase">My Projects</span></div>
+    <h2 class="reveal font-extrabold text-3xl md:text-2xl tracking-tight text-white">A showcase of my latest and best work across design, development, and innovation</h2>
     <div class="w-14 h-1 bg-gradient-to-r from-[#ff8c00] to-[#e65c00] rounded mt-4 reveal"></div>
+    
     <div class="grid md:grid-cols-3 gap-5 mt-10 md:mt-14">
-      <div class="bg-white rounded-2xl p-6 border border-orange-100 reveal hover:shadow-lg transition"><span class="text-2xl">🏍️</span><h3 class="font-syne font-bold mt-3">Royal Enfield – Vector DB</h3><p class="text-xs text-stone-500 mt-1">Dynamics 365, Azure, SAP integration. 99% accuracy.</p></div>
-      <div class="bg-white rounded-2xl p-6 border border-orange-100 reveal hover:shadow-lg transition"><span class="text-2xl">⚡</span><h3 class="font-syne font-bold mt-3">CRM Automation (n8n+Zoho)</h3><p class="text-xs text-stone-500 mt-1">Lead form → webhook → Zoho.</p></div>
-      <div class="bg-white rounded-2xl p-6 border border-orange-100 reveal hover:shadow-lg transition"><span class="text-2xl">🛍️</span><h3 class="font-syne font-bold mt-3">Bhuvana Dress – WhatsApp</h3><p class="text-xs text-stone-500 mt-1">Catalogue with instant WhatsApp order.</p></div>
+      
+      <!-- SmartBiz – Small Business Billing & Inventory System -->
+      <a href="http://13.51.206.109/smartbiz/" target="_blank" class="bg-white rounded-2xl overflow-hidden border border-orange-100 reveal hover:shadow-lg transition-all hover:border-[#ff8c00] hover:-translate-y-1 block group">
+        <div class="h-48 overflow-hidden bg-gray-100">
+          <img src="smartbiz.jpeg" alt="SmartBiz Billing System" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500">
+        </div>
+        <div class="p-6">
+          <h3 class="font-syne font-bold text-lg mt-2 group-hover:text-[#ff8c00] transition-colors">SmartBiz – Small Business Billing & Inventory System</h3>
+          <p class="text-sm text-stone-500 mt-2 leading-relaxed">Developed a full-stack billing and inventory management system for small businesses. Implemented customer demo modules for multiple business types (Juice Shop, Restaurant, Salon, Bakery).</p>
+          <div class="mt-4 flex items-center text-xs text-[#ff8c00] font-medium">
+            <span>View Project</span>
+            <svg class="w-4 h-4 ml-1 group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"></path>
+            </svg>
+          </div>
+        </div>
+      </a>
+
+      <!-- Moon Marine Service -->
+      <a href="https://giritharanj.github.io/moonmarine/" target="_blank" class="bg-white rounded-2xl overflow-hidden border border-orange-100 reveal hover:shadow-lg transition-all hover:border-[#ff8c00] hover:-translate-y-1 block group">
+        <div class="h-48 overflow-hidden bg-gray-100">
+          <img src="moonmarine.jpeg" alt="Moon Marine Service" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500">
+        </div>
+        <div class="p-6">
+          <h3 class="font-syne font-bold text-lg mt-2 group-hover:text-[#ff8c00] transition-colors">Moon Marine Service</h3>
+          <p class="text-sm text-stone-500 mt-2 leading-relaxed">The company is supplier of Mercury engines, GPS installation, boat machinery services, and maintenance.</p>
+          <div class="mt-4 flex items-center text-xs text-[#ff8c00] font-medium">
+            <span>View Project</span>
+            <svg class="w-4 h-4 ml-1 group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"></path>
+            </svg>
+          </div>
+        </div>
+      </a>
+
+      <!-- JANARTHANAN S – Insurance Agent -->
+      <a href="https://janainsurance.co.in/" target="_blank" class="bg-white rounded-2xl overflow-hidden border border-orange-100 reveal hover:shadow-lg transition-all hover:border-[#ff8c00] hover:-translate-y-1 block group">
+        <div class="h-48 overflow-hidden bg-gray-100">
+          <img src="insurance.jpeg" alt="Janarthanan Insurance" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500">
+        </div>
+        <div class="p-6">
+          <h3 class="font-syne font-bold text-lg mt-2 group-hover:text-[#ff8c00] transition-colors">JANARTHANAN S – Insurance Agent</h3>
+          <p class="text-sm text-stone-500 mt-2 leading-relaxed">Insurance agents to manage client inquiries and improve online presence. Includes contact form, service details, and business-focused layout.</p>
+          <div class="mt-4 flex items-center text-xs text-[#ff8c00] font-medium">
+            <span>View Project</span>
+            <svg class="w-4 h-4 ml-1 group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"></path>
+            </svg>
+          </div>
+        </div>
+      </a>
+
+      <!-- Website to CRM Automation (n8n+Zoho) -->
+      <a href="https://www.linkedin.com/posts/giritharanj_n8n-zohocrm-activity-7429030917966405632-OLMh?utm_source=social_share_send&utm_medium=member_desktop_web&rcm=ACoAACowE9oBGyuon47EcR6kxeIP_FIPMRiG2H0" target="_blank" class="bg-white rounded-2xl overflow-hidden border border-orange-100 reveal hover:shadow-lg transition-all hover:border-[#ff8c00] hover:-translate-y-1 block group">
+        <div class="h-48 overflow-hidden bg-gray-100">
+          <img src="aravindmotor.jpeg" alt="CRM Automation" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500">
+        </div>
+        <div class="p-6">
+          <h3 class="font-syne font-bold text-lg mt-2 group-hover:text-[#ff8c00] transition-colors">Website to CRM Automation (n8n+Zoho)</h3>
+          <p class="text-sm text-stone-500 mt-2 leading-relaxed">When a customer submits the form, data is captured in real-time and pushed directly into CRM without manual entry. Lead form → webhook → Zoho.</p>
+          <div class="mt-4 flex items-center text-xs text-[#ff8c00] font-medium">
+            <span>View Project</span>
+            <svg class="w-4 h-4 ml-1 group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"></path>
+            </svg>
+          </div>
+        </div>
+      </a>
+
+      <!-- a2zservicess – WhatsApp -->
+      <a href="https://giritharanj.github.io/a2zservicess/" target="_blank" class="bg-white rounded-2xl overflow-hidden border border-orange-100 reveal hover:shadow-lg transition-all hover:border-[#ff8c00] hover:-translate-y-1 block group">
+        <div class="h-48 overflow-hidden bg-gray-100">
+          <img src="a2zservices.jpeg" alt="A2Z Services" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500">
+        </div>
+        <div class="p-6">
+          <h3 class="font-syne font-bold text-lg mt-2 group-hover:text-[#ff8c00] transition-colors">a2zservicess – WhatsApp</h3>
+          <p class="text-sm text-stone-500 mt-2 leading-relaxed">Small service-based businesses website to help local businesses establish a professional online presence with minimal investment.</p>
+          <div class="mt-4 flex items-center text-xs text-[#ff8c00] font-medium">
+            <span>View Project</span>
+            <svg class="w-4 h-4 ml-1 group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"></path>
+            </svg>
+          </div>
+        </div>
+      </a>
+
+      <!-- ASM Tech Services Website -->
+      <a href="https://giritharanj.github.io/asmtech/" target="_blank" class="bg-white rounded-2xl overflow-hidden border border-orange-100 reveal hover:shadow-lg transition-all hover:border-[#ff8c00] hover:-translate-y-1 block group">
+        <div class="h-48 overflow-hidden bg-gray-100">
+          <img src="asmtech.jpeg" alt="ASM Tech Services" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500">
+        </div>
+        <div class="p-6">
+          <h3 class="font-syne font-bold text-lg mt-2 group-hover:text-[#ff8c00] transition-colors">ASM Tech Services Website</h3>
+          <p class="text-sm text-stone-500 mt-2 leading-relaxed">Tech services based company profile, services, and inquiry system built to demonstrate digital transformation for growing businesses.</p>
+          <div class="mt-4 flex items-center text-xs text-[#ff8c00] font-medium">
+            <span>View Project</span>
+            <svg class="w-4 h-4 ml-1 group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"></path>
+            </svg>
+          </div>
+        </div>
+      </a>
     </div>
   </div>
 </section>
 
-<!-- CONTACT SECTION -->
-<section id="contact" class="py-16 md:py-24 px-[5%] bg-[#fff9f2]">
-  <div class="max-w-7xl mx-auto grid md:grid-cols-2 gap-8 md:gap-14">
-    <div class="reveal space-y-4">
-      <span class="text-[#ff8c00] font-bold text-xs tracking-[3px] uppercase">Get in touch</span>
-      <h2 class="font-syne font-extrabold text-3xl md:text-4xl tracking-tight">Let's Work<br>Together</h2>
-      <div class="w-14 h-1 bg-gradient-to-r from-[#ff8c00] to-[#e65c00] rounded"></div>
-      <div class="pt-4 space-y-3">
-        <a href="tel:+918778373517" class="flex items-center gap-4 p-4 bg-white rounded-xl border border-orange-100 hover:border-[#ff8c00] transition">📞 <div><span class="text-xs text-stone-500">Call</span><p class="font-medium">+91 87783 73517</p></div></a>
-        <a href="https://wa.me/918778373517" class="flex items-center gap-4 p-4 bg-white rounded-xl border border-orange-100 hover:border-[#25D366] transition">💬 <div><span class="text-xs text-stone-500">WhatsApp</span><p class="font-medium">Chat directly</p></div></a>
-        <a href="mailto:giritharanjanakiraman@gmail.com" class="flex items-center gap-4 p-4 bg-white rounded-xl border border-orange-100 hover:border-[#ff8c00] transition">📧 <div><span class="text-xs text-stone-500">Email</span><p class="font-medium">giritharanjanakiraman@gmail.com</p></div></a>
-        <a href="https://linkedin.com/in/giritharanj" class="flex items-center gap-4 p-4 bg-white rounded-xl border border-orange-100 hover:border-[#ff8c00] transition">💼 <div><span class="text-xs text-stone-500">LinkedIn</span><p class="font-medium">Giritharan Janakiraman</p></div></a>
+<!-- CONTACT SECTION - WITH ANIMATED ORANGE AND BLACK BACKGROUND -->
+<section id="contact" class="py-12 md:py-16 px-[5%] relative overflow-hidden">
+  <!-- Animated Background -->
+  <div class="absolute inset-0 bg-gradient-to-br from-black via-black to-[#ff8c00]/20 z-0"></div>
+  
+  <!-- Animated Orange Circles (reduced size) -->
+  <div class="absolute top-0 left-0 w-64 h-64 bg-[#ff8c00]/10 rounded-full blur-3xl animate-pulse-slow"></div>
+  <div class="absolute bottom-0 right-0 w-56 h-56 bg-[#ff8c00]/20 rounded-full blur-3xl animate-pulse-slower"></div>
+  <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-48 h-48 bg-[#ff8c00]/5 rounded-full blur-2xl animate-pulse"></div>
+  
+  <!-- Animated Lines (reduced opacity) -->
+  <div class="absolute inset-0 opacity-5">
+    <div class="absolute top-10 left-10 w-24 h-1 bg-[#ff8c00] animate-slide-right"></div>
+    <div class="absolute bottom-20 right-20 w-32 h-1 bg-[#ff8c00] animate-slide-left"></div>
+    <div class="absolute top-1/2 right-10 w-20 h-1 bg-[#ff8c00] animate-slide-up"></div>
+  </div>
+
+  <!-- Floating Particles (reduced) -->
+  <div class="absolute inset-0">
+    <div class="absolute top-20 left-1/4 w-1.5 h-1.5 bg-[#ff8c00]/30 rounded-full animate-float"></div>
+    <div class="absolute bottom-32 right-1/3 w-2 h-2 bg-[#ff8c00]/40 rounded-full animate-float-delay"></div>
+    <div class="absolute top-40 right-1/4 w-1 h-1 bg-[#ff8c00]/50 rounded-full animate-float-slow"></div>
+  </div>
+
+  <div class="max-w-4xl mx-auto relative z-10 flex justify-center">
+    <!-- Centered Contact Info -->
+    <div class="reveal space-y-4 text-center w-full max-w-2xl">
+      <span class="text-[#ff8c00] font-bold text-xs tracking-[3px] uppercase bg-black/30 px-4 py-1.5 rounded-full inline-block backdrop-blur-sm border border-[#ff8c00]/20">Get in touch</span>
+      <h2 class="font-syne font-extrabold text-3xl md:text-4xl tracking-tight text-white">Let's Work Together</h2>
+      <div class="w-14 h-1 bg-gradient-to-r from-[#ff8c00] to-[#e65c00] rounded mx-auto"></div>
+      
+      <!-- Contact Cards with Glassmorphism - Centered in a grid -->
+      <div class="pt-6 grid grid-cols-1 sm:grid-cols-2 gap-3 max-w-2xl mx-auto">
+        <a href="tel:+918778373517" class="flex items-center gap-3 p-3 bg-white/10 backdrop-blur-md rounded-xl border border-[#ff8c00]/20 hover:border-[#ff8c00] transition-all hover:bg-white/20 group">
+          <span class="text-xl group-hover:scale-110 transition-transform">📞</span>
+          <div class="text-left">
+            <span class="text-xs text-[#ff8c00] font-medium">Call</span>
+            <p class="text-sm text-white">+91 87783 73517</p>
+          </div>
+        </a>
+        
+        <a href="https://wa.me/+918778373517" target="_blank" class="flex items-center gap-3 p-3 bg-white/10 backdrop-blur-md rounded-xl border border-[#ff8c00]/20 hover:border-[#25D366] transition-all hover:bg-white/20 group">
+          <span class="text-xl group-hover:scale-110 transition-transform">💬</span>
+          <div class="text-left">
+            <span class="text-xs text-[#ff8c00] font-medium">WhatsApp</span>
+            <p class="text-sm text-white">Chat directly</p>
+          </div>
+        </a>
+        
+        <a href="mailto:giritharanjanakiraman@gmail.com" class="flex items-center gap-3 p-3 bg-white/10 backdrop-blur-md rounded-xl border border-[#ff8c00]/20 hover:border-[#ff8c00] transition-all hover:bg-white/20 group">
+          <span class="text-xl group-hover:scale-110 transition-transform">📧</span>
+          <div class="text-left">
+            <span class="text-xs text-[#ff8c00] font-medium">Email</span>
+            <p class="text-sm text-white truncate">giritharanjanakiraman</p>
+          </div>
+        </a>
+        
+        <a href="https://linkedin.com/in/giritharanj" target="_blank" class="flex items-center gap-3 p-3 bg-white/10 backdrop-blur-md rounded-xl border border-[#ff8c00]/20 hover:border-[#ff8c00] transition-all hover:bg-white/20 group">
+          <span class="text-xl group-hover:scale-110 transition-transform">💼</span>
+          <div class="text-left">
+            <span class="text-xs text-[#ff8c00] font-medium">LinkedIn</span>
+            <p class="text-sm text-white">Giritharan J</p>
+          </div>
+        </a>
       </div>
     </div>
   </div>
 </section>
+
+
+
+
+
 
 <!-- FOOTER -->
 <footer class="py-6 px-[5%] border-t border-orange-100 flex flex-wrap justify-between text-xs text-stone-500">
